@@ -10,8 +10,8 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Shawal77'),
-            accountEmail: Text('example@gmail.com'),
+            accountName: const Text('Shawal77'),
+            accountEmail: const Text('example@gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(child: Image.network(
                 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
@@ -20,7 +20,7 @@ class NavBar extends StatelessWidget {
                 fit: BoxFit.cover,
               )),
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.deepPurpleAccent,
               image: DecorationImage(image: NetworkImage(
                 'https://images.unsplash.com/photo-1498598457418-36ef20772bb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EditPage extends StatelessWidget {
-  const EditPage({ Key? key }) : super(key: key);
+  const EditPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,11 @@ class EditPage extends StatelessWidget {
         centerTitle: true,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
-          ),
+        ),
       ),
-      body: null,
+      body: const Form(
+        child: Text('name'),
+        ),
     );
   }
 }
