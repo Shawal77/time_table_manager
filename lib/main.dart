@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'edit.dart';
+import 'pages/edit.dart';
+import 'pages/calender.dart';
+import 'pages/home.dart';
+import 'pages/routine.dart';
+import 'drawer.dart';
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,12 +17,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget buildPage(String text) => Center(
-      child: Text(
-        text,
-        style: const TextStyle(fontSize: 28),
-      ),
-    );
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Time Manager',
@@ -38,10 +38,10 @@ class MyApp extends StatelessWidget {
               bottom: const TabBar(
                 isScrollable:true,
                 tabs: [
-                Tab(icon: Icon(Icons.home), text: 'Home'),
-                Tab(icon: Icon(Icons.edit_rounded), text: 'Edit'),
-                Tab(icon: Icon(Icons.view_day_rounded), text: 'Routine'),
-                Tab(icon: Icon(Icons.view_timeline_rounded), text: 'Calender')
+                Tab(icon: Icon(Icons.home)),
+                Tab(icon: Icon(Icons.edit_rounded)),
+                Tab(icon: Icon(Icons.view_day_rounded)),
+                Tab(icon: Icon(Icons.view_timeline_rounded))
               ]),
               elevation: 20,
               actions: [
@@ -54,18 +54,14 @@ class MyApp extends StatelessWidget {
                   onPressed: () => {},
                 ),
               ],
-              leading: IconButton(
-                  onPressed: (() => {}), icon: const Icon(Icons.list_rounded)),
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(bottom: Radius.circular(22)),
-          ),
             ),
-            body: TabBarView(children: [
-              buildPage('Home Page'),
-              const EditPage(),
-              buildPage('Routine Page'),
-              buildPage('Calender Page')
+            body: const TabBarView(children: [
+              HomePage(),
+              EditPage(),
+              RoutinePage(),
+              CalendarPage(),
             ]),
+            drawer: const NavBar(),
           ),
         ));
   }
