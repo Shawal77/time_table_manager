@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'edit.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -25,8 +25,7 @@ class MyApp extends StatelessWidget {
           length: 4,
           child: Scaffold(
             appBar: AppBar(
-              title: const Text(
-                  'We will handle notifications \nand scheduling of your time.'),
+              title: const Text('Routine'),
               centerTitle: true,
               //backgroundColor: Colors.purple,
               flexibleSpace: Container(
@@ -63,7 +62,7 @@ class MyApp extends StatelessWidget {
             ),
             body: TabBarView(children: [
               buildPage('Home Page'),
-              buildPage('Edit Page'),
+              const EditPage(),
               buildPage('Routine Page'),
               buildPage('Calender Page')
             ]),
