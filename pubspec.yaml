@@ -29,9 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  syncfusion_flutter_calendar: ^19.4.56
-  intl: ^0.17.0
+  syncfusion_flutter_calendar: ^19.4.56 #handles the calendar
+  intl: ^0.17.0 #handle dates
   provider: ^6.0.2
+  basic_utils: ^4.2.0 #Handles date formats
 
 
   # The following adds the Cupertino Icons font to your application.

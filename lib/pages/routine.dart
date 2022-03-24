@@ -17,7 +17,8 @@ class RoutinePage extends StatelessWidget {
           ),
       ),
       body: SfCalendar(
-        view: CalendarView.timelineDay,
+        view: CalendarView.day,
+        initialDisplayDate: DateTime.now(),
         )
     );
   }

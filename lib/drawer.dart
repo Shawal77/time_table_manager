@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'sorry.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({ Key? key }) : super(key: key);
@@ -28,44 +29,51 @@ class NavBar extends StatelessWidget {
                 ),
             ),
             ),
-          const ListTile(
-            leading: Icon(Icons.favorite_rounded),
-            title: Text('Favourites'),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.favorite_rounded),
+            title: const Text('Favourites'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const Sorry())),
+              ),
+          ListTile(
+            leading: const Icon(Icons.people),
+            title: const Text('Friends'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const Sorry())),
           ),
-          const ListTile(
-            leading: Icon(Icons.people),
-            title: Text('Friends'),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.share),
+            title: const Text('Share App'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const Sorry()))
           ),
-          const ListTile(
-            leading: Icon(Icons.share),
-            title: Text('Share App'),
-            onTap: null,
-          ),
-          const ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Notice'),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.notifications),
+            title: const Text('Notice'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const Sorry())),
           ),
           const Divider(),
-          const ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const Sorry())),
           ),
-          const ListTile(
-            leading: Icon(Icons.policy),
-            title: Text('policies'),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.policy),
+            title: const Text('policies'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const Sorry())),
           ), 
           const Divider(),
-          const ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Exit to app'),
-            onTap: null,
+          ListTile(
+            leading: const Icon(Icons.exit_to_app),
+            title: const Text('Exit to app'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const Sorry())),
           ),
-        ],
+          ]
       )
     );
   }

@@ -18,6 +18,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         themeMode: ThemeMode.dark,
+        darkTheme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: Colors.black12,
+          primaryColor: Colors.purple
+        ),
         debugShowCheckedModeBanner: false,
         title: 'Time Manager',
         
@@ -56,10 +60,10 @@ class MyApp extends StatelessWidget {
               ],
             ),
             body: const TabBarView(children: [
-              HomePage(),
-              EventEditingPage(),
               RoutinePage(),
               CalendarPage(),
+              EventEditingPage(),
+              HomePage(),
             ]),
             drawer: const NavBar(),
           ),
