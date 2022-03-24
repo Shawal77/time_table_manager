@@ -5,7 +5,6 @@ import 'pages/home.dart';
 import 'pages/routine.dart';
 import 'drawer.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -18,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         title: 'Time Manager',
         
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
             ),
             body: const TabBarView(children: [
               HomePage(),
-              EditPage(),
+              EventEditingPage(),
               RoutinePage(),
               CalendarPage(),
             ]),

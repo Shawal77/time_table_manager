@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class RoutinePage extends StatelessWidget {
   const RoutinePage({ Key? key }) : super(key: key);
@@ -15,7 +16,9 @@ class RoutinePage extends StatelessWidget {
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
           ),
       ),
-      body: null,
+      body: SfCalendar(
+        view: CalendarView.timelineDay,
+        )
     );
   }
 }
