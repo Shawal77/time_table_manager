@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'pages/edit.dart';
 import 'pages/calender.dart';
 import 'pages/home.dart';
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+      create: (context) => EventProvider(),
+      child: MaterialApp(
         themeMode: ThemeMode.dark,
         darkTheme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Colors.black12,
@@ -67,7 +70,9 @@ class MyApp extends StatelessWidget {
             ]),
             drawer: const NavBar(),
           ),
-        ));
+        )
+      )
+    ) ;
   }
   
 }
