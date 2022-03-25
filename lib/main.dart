@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'pages/edit.dart';
+import 'events/edit.dart';
 import 'pages/calender.dart';
 import 'pages/home.dart';
 import 'pages/routine.dart';
@@ -17,10 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return ChangeNotifierProvider(
       create: (context) => EventProvider(),
       child: MaterialApp(
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.light,
         darkTheme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Colors.black12,
           primaryColor: Colors.purple
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         title: 'Time Manager',
         
         home: DefaultTabController(
-          length: 4,
+          length: 3,
           child: Scaffold(
             appBar: AppBar(
               title: const Text('Routine'),
@@ -46,18 +47,18 @@ class MyApp extends StatelessWidget {
                 isScrollable:true,
                 tabs: [
                 Tab(icon: Icon(Icons.home)),
-                Tab(icon: Icon(Icons.edit_rounded)),
+                //Tab(icon: Icon(Icons.edit_rounded)),
                 Tab(icon: Icon(Icons.view_day_rounded)),
                 Tab(icon: Icon(Icons.view_timeline_rounded))
               ]),
               elevation: 20,
               actions: [
                 IconButton(
-                  icon: const Icon(Icons.notifications_none_rounded),
+                  icon: const Icon(Icons.dark_mode_rounded),
                   onPressed: () => {},
                 ),
                 IconButton(
-                  icon: const Icon(Icons.add_alarm),
+                  icon: const Icon(Icons.light_mode_rounded),
                   onPressed: () => {},
                 ),
               ],
@@ -65,7 +66,7 @@ class MyApp extends StatelessWidget {
             body: const TabBarView(children: [
               RoutinePage(),
               CalendarPage(),
-              EventEditingPage(),
+              //EventEditingPage(),
               HomePage(),
             ]),
             drawer: const NavBar(),

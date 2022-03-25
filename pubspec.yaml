@@ -1,4 +1,5 @@
 name: time_table_manager
+
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -33,7 +34,7 @@ dependencies:
   intl: ^0.17.0 #handle dates
   provider: ^6.0.2
   basic_utils: ^4.2.0 #Handles date formats
-
+  shared_preferences: ^2.0.13
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

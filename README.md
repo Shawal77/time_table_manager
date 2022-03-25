@@ -8,3 +8,7 @@ showing me areas where im losing focus or time
 
 ## hopefully this week project goes well
 
+### I ended up using allot of youtube and something called syncfusion. I never thought it was this hard to make a calendar app. 
+day 5 of app creation
+#### presentation Day tommorow
+
