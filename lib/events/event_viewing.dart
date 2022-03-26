@@ -1,3 +1,4 @@
+import 'package:time_table_manager/events/edit.dart';
 import 'event_provider.dart';
 import 'event.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,23 @@ class EventViewingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.brown[100],
         appBar: AppBar(
+          backgroundColor: Colors.brown[200],
+          foregroundColor: Colors.brown,
           leading: const CloseButton(),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.edit),
+              onPressed: () => Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => EventEditingPage(event: event)))),
+            IconButton(
+              onPressed: () {
+                var provider = Provider.of<EventProvider>(context, listen: false);
+                provider.deleteEvent(event);
+              },
+              icon: const Icon(Icons.delete))
+              ],
         ),
         body: ListView(
           padding: const EdgeInsets.all(12),
@@ -22,13 +38,13 @@ class EventViewingPage extends StatelessWidget {
                 style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.amber)),
+                    color: Colors.black12)),
             const SizedBox(height: 24),
             Text(event.description,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.amber)),
+                    color: Colors.brown[300])),
           ],
         ));
   }
@@ -36,17 +52,17 @@ class EventViewingPage extends StatelessWidget {
   Widget buildDateTime(Event event) {
     return Column(
       children: [
-        buildDate(event.isAllDay ? 'All-day' : 'From', event.from),
-        if (!event.isAllDay) buildDate('To', event.to)
+        buildDate(event.isAllDay ? 'All-day ' : 'From ', event.from),
+        if (!event.isAllDay) buildDate('To ', event.to)
       ],
     );
   }
 
   Widget buildDate(String title, DateTime date) {
-    return Text('${title} ${date}');
+    return Text('${title}\n${date}');
   }
 
-  Widget buildViewingActions(BuildContext context, Event event) {
+  /*Widget buildViewingActions(BuildContext context, Event event) {
     IconButton(
       icon: const Icon(Icons.edit),
       onPressed: () => Navigator.of(context).pushReplacement(
@@ -61,5 +77,5 @@ class EventViewingPage extends StatelessWidget {
         },
         icon: const Icon(Icons.delete));
     throw '';
-  }
+  }*/
 }

@@ -29,7 +29,7 @@ class NavBar extends StatelessWidget {
                 ),
             ),
             ),
-          ListTile(
+          /*ListTile(
             leading: const Icon(Icons.favorite_rounded),
             title: const Text('Favourites'),
             onTap: () => Navigator.of(context).push(
@@ -52,26 +52,25 @@ class NavBar extends StatelessWidget {
             title: const Text('Notice'),
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const Sorry())),
-          ),
+          ),*/
           const Divider(),
           ListTile(
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const Sorry())),
+              MaterialPageRoute(builder: (context) => const Settings())),
           ),
           ListTile(
             leading: const Icon(Icons.policy),
             title: const Text('policies'),
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const Sorry())),
+              MaterialPageRoute(builder: (context) => const Policies())),
           ), 
           const Divider(),
           ListTile(
             leading: const Icon(Icons.exit_to_app),
-            title: const Text('Exit to app'),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const Sorry())),
+            title: const Text('App'),
+            onTap: () => Navigator.of(context).pop(),
           ),
           ]
       )

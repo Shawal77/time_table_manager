@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
+//import 'package:syncfusion_flutter_calendar/calendar.dart';
 //import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:provider/provider.dart';
 import 'package:time_table_manager/events/event.dart';
 import 'utils.dart';
 import 'event.dart';
+import 'event_provider.dart';
 
 class EventEditingPage extends StatefulWidget {
   const EventEditingPage({Key? key, this.event}) : super(key: key);
@@ -69,8 +70,12 @@ class _EventEditingPageState extends State<EventEditingPage> {
           controller: titleController,
         );
     return Scaffold(
+      backgroundColor: Colors.brown[100],
       appBar:
-          AppBar(leading: const CloseButton(), actions: buildEditingActions()),
+          AppBar(
+             backgroundColor: Colors.brown[200],
+             foregroundColor: Colors.brown,
+            leading: const CloseButton(), actions: buildEditingActions()),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(12),
         child: Form(
@@ -222,18 +227,17 @@ class _EventEditingPageState extends State<EventEditingPage> {
       final provider = Provider.of<EventProvider>(context, listen: false);
 
       if (isEditing) {
-        provider.editEvent(event,widget.event !);
+        provider.editEvent(event, widget.event!);
         Navigator.of(context).pop();
       } else {
         provider.addEvent(event);
+        Navigator.of(context).pop();
       }
-
-      Navigator.of(context).pop();
     }
   }
 }
 
-class EventProvider extends ChangeNotifier {
+/*class EventProvider extends ChangeNotifier {
   final List<Event> _events = [];
 
   List<Event> get events => _events;
@@ -250,4 +254,4 @@ class EventProvider extends ChangeNotifier {
   void editEvent(Event newEvent, Event oldEvent) {
     final index = _events.indexOf(oldEvent);
   }
-}
+}*/

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'events/edit.dart';
+//import 'events/edit.dart';
 import 'pages/calender.dart';
 import 'pages/home.dart';
 import 'pages/routine.dart';
 import 'drawer.dart';
+import 'package:time_table_manager/events/event_provider.dart';
 
 void main() {
   runApp(const MyApp());

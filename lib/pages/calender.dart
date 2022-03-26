@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:time_table_manager/events/event_viewing.dart';
-import 'package:time_table_manager/sorry.dart';
+//import 'package:time_table_manager/sorry.dart';
 import '../events/edit.dart';
 import 'package:time_table_manager/events/event.dart';
+import 'package:time_table_manager/events/event_provider.dart';
 
 class CalendarPage extends StatelessWidget {
   const CalendarPage({Key? key}) : super(key: key);
